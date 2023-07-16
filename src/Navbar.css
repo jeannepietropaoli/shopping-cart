@@ -10,11 +10,11 @@
 }
 
 .navbar--list-item {
-    background-color: aqua;
     height: 90px;
     width: 45px;
     text-align: center;
     display: flex;
+    border-radius: 0 0 8px 8px;
 }
 
 .navbar--list-item  > a {
