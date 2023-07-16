@@ -72,7 +72,7 @@ main > * {
 }
 
 .shop-button:hover {
-    box-shadow: -4px -4px 0 -2px #57585A, -4px -4px 0 0 white;
+    animation: shadow-appearing 150ms forwards;
 }
 
 .facts-container {
@@ -100,4 +100,18 @@ main > * {
 
 .fact > span:nth-child(2) {
     font-size: 25px;
+}
+
+@keyframes shadow-appearing {
+    0% {
+        box-shadow: -0px -0px 0 -0px #57585A, -0px -0px 0 0 white;
+    }
+
+    50% {
+        box-shadow: -2px -2px 0 -1px #57585A, -2px -2px 0 0 white;
+    }
+
+    100% {
+        box-shadow: -4px -4px 0 -2px #57585A, -4px -4px 0 0 white;
+    }
 }
