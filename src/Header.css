@@ -1,6 +1,7 @@
 header {
     display: flex;
     color: white;
+    background-color: #D17D43;
 }
 
 .header--logo-container {
