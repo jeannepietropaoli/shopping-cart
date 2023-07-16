@@ -1,6 +1,7 @@
-import React from "react";
+import React from "react"
+import { Link } from "react-router-dom";
 import "./Home.css"
-import Header from "./Header";
+import Header from "./Header"
 import titleLogo from "./assets/title-logo.png"
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
                     <h1>BEAN BARN</h1>
                     <h4>YOUR COFFEE BEANS SUPPLIER</h4>
                     <h4>- FROM FARM TO BREW -</h4>
+                    <button className="shop-button"><Link to="/shop">SHOP NOW</Link></button>
                 </div>
                 <div className="facts-container">
                     <div className="fact">
