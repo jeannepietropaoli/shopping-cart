@@ -1,6 +1,5 @@
-import './App.css';
-import Navbar from './Navbar';
-import RouteSwitch from './RouteSwitch';
+import './styles/App.css';
+import RouteSwitch from './components/RouteSwitch';
 
 
 function App() {
