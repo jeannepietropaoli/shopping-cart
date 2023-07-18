@@ -3,7 +3,7 @@ import React from "react";
 import Home from "./Home";
 import Shop from "./Shop"
 
-export default function RouteSwitch() {
+export default function RouteSwitch(props) {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
