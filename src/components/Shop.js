@@ -32,7 +32,6 @@ export default function Shop() {
 
     return (
         <div className="shop">
-            <Header />
             <main className="shop--main">
                 <Sidebar categories={getProductCategories()} switchCategory={switchCategory} />
                 <section className="products">
