@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import "../styles/Navbar.css"
 
-export default function Navbar() {
+export default function Navbar(props) {
     return (
         <div className="navbar">
             <ul className="navbar--list">
                 <li className="navbar--list-item animate"><Link to="/">HOME</Link></li>
                 <li className="navbar--list-item animate"><Link to="/shop">SHOP</Link></li>
-                <li className="navbar--list-item animate"><Link>CART</Link></li>
+                <li className="navbar--list-item animate"><button onClick={props.toggleCart}>CART</button></li>
                 <li className="navbar--list-item animate"><Link>SEARCH</Link></li>
             </ul>
         </div>
