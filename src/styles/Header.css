@@ -1,0 +1,33 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 30px;
+}
+
+.header--logo-container {
+    display: flex;
+    gap: 10px;
+    min-width: max-content;
+    align-items: center;
+    position: relative;
+}
+
+.header--logo-container > a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.header--logo-container > .logo-img {
+    height: 50px;
+}
+
+.header--logo-container > .logo-text {
+    max-width: min-content;
+    position: relative;
+    top: 4px;
+    line-height: 1em;
+    border-bottom: 4px solid #FFB100;
+}

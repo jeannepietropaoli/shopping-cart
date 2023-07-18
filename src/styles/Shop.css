@@ -1,0 +1,11 @@
+.shop--main {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    padding: 80px clamp(20px, 5vw, 80px)
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));  /* grid square actually shrinks but minimum width is set to the card content  */   justify-items: center;
+    gap: 20px;
+}

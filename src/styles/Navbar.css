@@ -1,0 +1,88 @@
+.navbar {
+    min-width: 17%;
+}
+
+.navbar--list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.navbar--list-item {
+    width: 60px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    position: relative;
+}
+
+.navbar--list-item  > a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.navbar--list-item::after {
+    content: '';
+    position: absolute;
+    left    : 0;
+    bottom  : -2px;
+    height  : 1px;
+    width   : 0%;
+    border-bottom: 4px solid;
+    transition: width 200ms ease-in-out;
+}
+
+.navbar--list-item:nth-child(1)::after {
+    border-bottom-color: #FFB100;
+}
+
+.navbar--list-item:nth-child(2)::after {
+    border-bottom-color: #0ABC51;
+}
+
+.navbar--list-item:nth-child(3)::after {
+    border-bottom-color: #FF735B;
+}
+
+.navbar--list-item:nth-child(4)::after {
+    border-bottom-color: #03CEA4;
+}
+
+.navbar--list-item:hover::after {
+    width   : 110%;
+}
+
+
+
+
+
+/* 
+
+.navbar--list-item:nth-child(1) {
+    display: none;
+    background-color: #036B66;
+}
+
+.navbar--list-item:nth-child(2) {
+    background-color: #FFB100;
+    cursor: pointer;
+}
+
+.navbar--list-item:nth-child(3) {
+    background-color: #03CEA4;
+    cursor: pointer;
+}
+
+.navbar--list-item:nth-child(4) {
+    background-color: #FF735B;
+    cursor: pointer;
+}
+
+.navbar--list-item:nth-child(5) {
+    background-color: #0ABC51;
+    cursor: pointer;
+} */

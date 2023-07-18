@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import "./Home.css"
+import "../styles/Home.css"
 import Header from "./Header"
-import titleLogo from "./assets/title-logo.png"
+import titleLogo from "../assets/title-logo.png"
 
 export default function Home() {
     return (
         <div className="home">
-            <Header />
-            <main>
+            <Header logo="light" color="white" backgroundColor="transparent" boxShadow="none" />
+            <main className="home--main">
                 <div className="title-container">
                     <img alt="Bean Barn logo" src={titleLogo} />
                     <h1>BEAN BARN</h1>
