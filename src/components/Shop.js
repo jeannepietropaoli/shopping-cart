@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 import productsData from "../productsData";
 import "../styles/Shop.css"
 
-export default function Shop() {
+export default function Shop(props) {
     const defaultSection = productsData[0]
 
     const [currentProductSection, setCurrentProductSection] = React.useState(defaultSection)
@@ -27,7 +27,7 @@ export default function Shop() {
     }
 
     const productsElements = getCurrentItems().map(product => {
-        return (<ProductCard key={product.id} name={product.name} price={product.price} imgSrc={product.imgSrc} />)
+        return (<ProductCard key={product.id} product={product} addToCart={props.addToCart} />)
     })
 
     return (

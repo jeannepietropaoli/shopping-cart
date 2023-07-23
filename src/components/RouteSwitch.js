@@ -7,7 +7,7 @@ export default function RouteSwitch(props) {
     return (
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/shop" element={<Shop />} />
+            <Route path="/shop" element={<Shop addToCart={props.addToCart} />} />
         </Routes>
     )
 }
