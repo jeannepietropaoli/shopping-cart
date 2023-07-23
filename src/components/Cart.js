@@ -17,6 +17,7 @@ export default function Cart(props) {
     
     return (
         <div className="cart-container">
+            <div className="cart-empty-section" onClick={props.closeCart}></div>
             <div className="cart">
                 <h2>Cart</h2>
                 <div className="cart--items-container">

@@ -8,6 +8,11 @@
     display: flex;
 }
 
+.cart-empty-section {
+    flex-grow: 1;
+    background-color: transparent;
+}
+
 .cart {
     margin-left: auto;
     width: 20%;
