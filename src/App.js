@@ -26,10 +26,9 @@ function App() {
     return array.findIndex(element => element.id === product.id)
   }
 
-  function addToCart(e, product) {
-    e.preventDefault()
+  function addToCart(product) {
     setCartItems(prevCartItems => {
-      const newCartItems = prevCartItems
+      const newCartItems = [...prevCartItems]
       if(noSuchItemInCart(newCartItems, product)) {
         newCartItems.push({...product, quantity : 1})
       }
@@ -41,7 +40,7 @@ function App() {
       return (newCartItems)
     })
   }
-  
+
   return (
     <div className="app">
       <Header openCart={openCart} />

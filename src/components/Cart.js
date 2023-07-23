@@ -4,7 +4,7 @@ import "../styles/Cart.css"
 export default function Cart(props) {
     const cartItemsElements = props.cartItems.map(item => {
         return (
-            <div className="cart--product">
+            <div key={item.id} className="cart--product">
                 <div className="cart--product-image-container">
                     <img src={item.imgSrc} alt={item.name} />
                     <span className="cart--product-quantity">{item.quantity}</span>

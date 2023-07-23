@@ -10,7 +10,7 @@ export default function ProductCard(props) {
                 <span>{product.name}</span>
                 <span>{product.price}$</span>
             </figcaption>
-            <button onClick={(e) => props.addToCart(e, product)} className="add-to-cart-button">+</button>
+            <button onClick={() => props.addToCart(product)} className="add-to-cart-button">+</button>
         </figure>
     )
 }
