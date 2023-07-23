@@ -2,15 +2,25 @@ import React from "react";
 import "../styles/Cart.css"
 
 export default function Cart(props) {
-    const [cartItems, setCartItems] = React.useState([])
-    const cartItemsElements = []
+    const cartItemsElements = props.cartItems.map(item => {
+        return (
+            <div className="cart--product">
+                <div className="cart--product-image-container">
+                    <img src={item.imgSrc} alt={item.name} />
+                    <span className="cart--product-quantity">{item.quantity}</span>
+                </div>
+                <span className="cart--product-name">{item.name}</span>
+                <span className="cart--product-price">{item.price}$</span>
+            </div>
+        )
+    })
     
     return (
         <div className="cart-container">
             <div className="cart">
                 <h2>Cart</h2>
                 <div className="cart--items-container">
-                    {cartItems.length === 0 && <p>- No item in your cart yet -</p>}
+                    {cartItemsElements.length === 0 && <p>- No item in your cart yet -</p>}
                     {cartItemsElements}
                 </div>
                 <div className="cart--total-container">
