@@ -2,14 +2,15 @@ import React from "react";
 import "../styles/ProductCard.css"
 
 export default function ProductCard(props) {
+    const {product} = props
     return (
         <figure className="card">
-            <img className="card--image" src={props.imgSrc} alt={props.name} />
+            <img className="card--image" src={product.imgSrc} alt={product.name} />
             <figcaption className="card--infos">
-                <span>{props.name}</span>
-                <span>{props.price}$</span>
+                <span>{product.name}</span>
+                <span>{product.price}$</span>
             </figcaption>
-            <button className="add-to-cart-button">+</button>
+            <button onClick={(e) => props.addToCart(e, product)} className="add-to-cart-button">+</button>
         </figure>
     )
 }

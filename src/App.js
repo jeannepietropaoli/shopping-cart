@@ -7,8 +7,8 @@ import Navbar from './components/Navbar';
 
 
 function App() {
-  React.useEffect(() => console.log('apprenders')) 
-  const [cartShown, setCartShown] = React.useState(true)
+  const [cartShown, setCartShown] = React.useState(false)
+  const [cartItems, setCartItems] = React.useState([])
 
   function closeCart() {
     setCartShown(false)
@@ -18,11 +18,35 @@ function App() {
     setCartShown(true)
   }
 
+  function noSuchItemInCart(cartItems, product) {
+      return !cartItems.find(item => item.id === product.id)
+  }
+
+  function findProductIndex(array, product) {
+    return array.findIndex(element => element.id === product.id)
+  }
+
+  function addToCart(e, product) {
+    e.preventDefault()
+    setCartItems(prevCartItems => {
+      const newCartItems = prevCartItems
+      if(noSuchItemInCart(newCartItems, product)) {
+        newCartItems.push({...product, quantity : 1})
+      }
+      else {
+        const index = findProductIndex(newCartItems, product)
+        const productToUpdate = newCartItems[index]
+        newCartItems.splice(index, 1, {...productToUpdate, quantity : productToUpdate.quantity + 1})
+      }
+      return (newCartItems)
+    })
+  }
+  
   return (
     <div className="app">
       <Header openCart={openCart} />
-      <RouteSwitch />
-      {cartShown && <Cart closeCart={closeCart} />}
+      <RouteSwitch addToCart={addToCart} />
+      {cartShown && <Cart closeCart={closeCart} cartItems={cartItems} />}
     </div>
   );
 }
