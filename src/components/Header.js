@@ -39,7 +39,7 @@ export default function Header(props) {
                 <h3 className="logo-text">BEAN BARN</h3>
                 <Link to="/"></Link>
             </div>
-            <Navbar openCart={props.openCart} />
+            <Navbar openCart={props.openCart} numberOfItems={props.numberOfItems} />
         </header>
     )
 }

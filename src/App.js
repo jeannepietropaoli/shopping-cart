@@ -41,9 +41,17 @@ function App() {
     })
   }
 
+  function calculateNumberOfItemsInCart() {
+    let count = 0
+    cartItems.forEach(item => {
+      count = count + item.quantity
+    })
+    return count
+  }
+
   return (
     <div className="app">
-      <Header openCart={openCart} />
+      <Header openCart={openCart} numberOfItems={calculateNumberOfItemsInCart()} />
       <RouteSwitch addToCart={addToCart} />
       {cartShown && <Cart closeCart={closeCart} cartItems={cartItems} />}
     </div>
