@@ -58,3 +58,20 @@
 .navbar--list-item:hover::after {
     width   : 110%;
 }
+
+.cart-link > span{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    top: -6px;
+    right: -3px;
+    background-color: #FFB100;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 800;
+}
