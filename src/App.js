@@ -49,11 +49,39 @@ function App() {
     return count
   }
 
+  function increment(productId) {
+    setCartItems(prevCartItems => {
+      return prevCartItems.map(prevItem => {
+        return prevItem.id === productId
+          ? {...prevItem, quantity : prevItem.quantity + 1}
+          : prevItem
+      })
+    })
+  }
+
+  function decrement(productId) {
+    setCartItems(prevCartItems => {
+      return prevCartItems.map(prevItem => {
+        return prevItem.id === productId
+          ? {...prevItem, quantity : prevItem.quantity - 1}
+          : prevItem
+      })
+    })
+    removeEmptyItemsFromCart()
+  }
+
+  function removeEmptyItemsFromCart() {
+    setCartItems(prevCartItems => {
+      const newCartItems = [...prevCartItems]
+      return newCartItems.filter(item => item.quantity > 0)
+    })
+  }
+  
   return (
     <div className="app">
       <Header openCart={openCart} numberOfItems={calculateNumberOfItemsInCart()} />
       <RouteSwitch addToCart={addToCart} />
-      {cartShown && <Cart closeCart={closeCart} cartItems={cartItems} />}
+      {cartShown && <Cart increment={increment} decrement={decrement} closeCart={closeCart} cartItems={cartItems} />}
     </div>
   );
 }
