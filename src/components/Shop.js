@@ -26,8 +26,8 @@ export default function Shop(props) {
         setCurrentProductSection(getProductData(targetCategory))
     }
 
-    const productsElements = getCurrentItems().map(product => {
-        return (<ProductCard key={product.id} product={product} addToCart={props.addToCart} />)
+    const productsElements = getCurrentItems().map((product, index) => {
+        return (<ProductCard index={index} key={product.id} product={product} addToCart={props.addToCart} />)
     })
 
     return (

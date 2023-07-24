@@ -3,8 +3,15 @@ import "../styles/ProductCard.css"
 
 export default function ProductCard(props) {
     const {product} = props
+    const delay = `${props.index * 200}ms`
+    const [shown, setShown] = React.useState(false)
+    
+    React.useEffect(() => {
+        setShown(true)
+    }, [])
+
     return (
-        <figure className="card">
+        <figure className={`card ${shown ? "shown" : ""}`} style={{"--delay" : delay}}>
             <img className="card--image" src={product.imgSrc} alt={product.name} />
             <figcaption className="card--infos">
                 <span>{product.name}</span>

@@ -7,6 +7,12 @@
     height: 350px;
     width: 350px;
     border-radius: 10px;
+    opacity: 0;
+    transition: opacity 400ms ease-in var(--delay);
+}
+
+.card.shown {
+    opacity: 1;
 }
 
 .card:hover {
