@@ -2,6 +2,14 @@ import React from "react";
 import "../styles/Cart.css"
 
 export default function Cart(props) {
+    function calculateItemTotalPrice(item) {
+        return item.price * item.quantity
+    }
+
+    function calculateCartTotal() {
+        return props.cartItems.reduce((total, currentItem) => total + calculateItemTotalPrice(currentItem), 0)
+      }
+
     const cartItemsElements = props.cartItems.map(item => {
         return (
             <div key={item.id} className="cart--product">
@@ -10,7 +18,11 @@ export default function Cart(props) {
                     <span className="cart--product-quantity">{item.quantity}</span>
                 </div>
                 <span className="cart--product-name">{item.name}</span>
-                <span className="cart--product-price">{item.price}$</span>
+                <div className="cart--product-counter">
+                    <span onClick={() => props.increment(item.id)}>+</span>
+                    <span onClick={() => props.decrement(item.id)}>-</span>
+                </div>
+                <span className="cart--product-price">{item.price}$<small>/u</small></span>
             </div>
         )
     })
@@ -26,7 +38,7 @@ export default function Cart(props) {
                 </div>
                 <div className="cart--total-container">
                     <h2>Total</h2>
-                    <h2>0$</h2>
+                    <h2>{calculateCartTotal()}$</h2>
                 </div>
                 <button className="cart--checkout-button">Checkout</button>
                 <button onClick={props.closeCart} className="cart--close-button">x</button>
