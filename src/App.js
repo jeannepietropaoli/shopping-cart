@@ -5,7 +5,6 @@ import Header from './components/Header';
 import RouteSwitch from './components/RouteSwitch';
 import Navbar from './components/Navbar';
 
-
 function App() {
   const [cartShown, setCartShown] = React.useState(false)
   const [cartItems, setCartItems] = React.useState([])
@@ -76,7 +75,7 @@ function App() {
       return newCartItems.filter(item => item.quantity > 0)
     })
   }
-  
+
   return (
     <div className="app">
       <Header openCart={openCart} numberOfItems={calculateNumberOfItemsInCart()} />
