@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 import "../styles/Header.css"
 
 export default function Header(props) {
-    const [test,setTest] = React.useState(true)
     const homeHeaderStyles = {
         logo : "light",
         color : "white",
@@ -33,7 +32,7 @@ export default function Header(props) {
     }
 
     return (
-        <header style={styles} >
+        <header data-testid="header-component" style={styles} >
             <div className="header--logo-container">
                 <img className="logo-img" alt="Bean Barn logo" src={props.logo === "dark" ? logoDark : logoLight} />
                 <h3 className="logo-text">BEAN BARN</h3>

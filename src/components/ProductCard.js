@@ -24,7 +24,7 @@ export default function ProductCard(props) {
     }, [addedToCart])
 
     return (
-        <figure className={`card ${shown ? "shown" : ""}`} style={{"--delay" : delay}}>
+        <figure data-testid="product-card" className={`card ${shown ? "shown" : ""}`} style={{"--delay" : delay}}>
             <img className="card--image" src={product.imgSrc} alt={product.name} />
             <figcaption className="card--infos">
                 <span>{product.name}</span>
@@ -35,7 +35,8 @@ export default function ProductCard(props) {
                 props.addToCart(product)
                 setAddedToCart(true)
             }} 
-            className="add-to-cart-button" >
+            className="add-to-cart-button" 
+            data-testid="add-item-button" >
                 +
              </button>
             <span className={`added-dot ${addedToCart ? "visible" : ""}`}>✓</span>

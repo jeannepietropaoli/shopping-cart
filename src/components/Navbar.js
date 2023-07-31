@@ -9,7 +9,7 @@ export default function Navbar(props) {
                 <li className="navbar--list-item animate"><Link to="/">HOME</Link></li>
                 <li className="navbar--list-item animate"><Link to="/shop">SHOP</Link></li>
                 <li className="navbar--list-item animate">
-                    <button className="cart-link" onClick={props.openCart}>
+                    <button data-testid="cart-open" className="cart-link" onClick={props.openCart}>
                         CART
                         <span>{props.numberOfItems}</span>
                     </button>

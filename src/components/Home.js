@@ -13,7 +13,7 @@ export default function Home() {
                     <h1>BEAN BARN</h1>
                     <h4>YOUR COFFEE BEANS SUPPLIER</h4>
                     <h4>- FROM FARM TO BREW -</h4>
-                    <button className="shop-button"><Link to="/shop">SHOP NOW</Link></button>
+                    <button data-testid="shop-button" className="shop-button"><Link to="/shop">SHOP NOW</Link></button>
                 </div>
                 <div className="facts-container">
                     <div className="fact">

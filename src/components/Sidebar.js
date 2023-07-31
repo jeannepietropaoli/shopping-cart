@@ -6,7 +6,7 @@ export default function Sidebar(props) {
         return (<li key={category.id} className="sidebar--item" onClick={() => props.switchCategory(category.name)}>{category.name}</li>)
     })
     return (
-        <aside>
+        <aside data-testid="sidebar-component">
             <ul className="sidebar--list">
                 {categoriesElements}
             </ul>
