@@ -1,8 +1,7 @@
 import React from "react";
-import Header from "./Header";
 import Sidebar from "./Sidebar";
 import ProductCard from "./ProductCard";
-import productsData from "../productsData";
+import productsData from "../productsData.js";
 import "../styles/Shop.css"
 
 export default function Shop(props) {
@@ -31,7 +30,7 @@ export default function Shop(props) {
     })
 
     return (
-        <div className="shop">
+        <div data-testid="shop-component" className="shop">
             <main className="shop--main">
                 <Sidebar categories={getProductCategories()} switchCategory={switchCategory} />
                 <section className="products">
